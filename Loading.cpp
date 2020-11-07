@@ -16,14 +16,16 @@ LoadState::LoadState(Game* game)
 {
 	resetState();
 
-	loadTexture.loadFromFile(FLAG_DIR);
+	if (!loadTexture.loadFromFile(FLAG_DIR))
+		std::cout << "Failed to load " << FLAG_DIR << " image file" << std::endl;
 	loadSprite.setTexture(loadTexture);
 	// Resize bg to desired size
 	sf::Vector2i targetSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 	loadSprite.setScale(targetSize.x / loadSprite.getLocalBounds().width,
 		targetSize.y / loadSprite.getLocalBounds().height);
 	// Load Font
-	loadFont.loadFromFile(FONT_DIR);
+	if (!loadFont.loadFromFile(FONT_DIR))
+		std::cout << "Failed to load " << FONT_DIR << " ttf file" << std::endl;
 	loadText.setFont(loadFont);
 	// Settings for font
 	loadText.setPosition(290, 140); // Edit later
@@ -46,7 +48,7 @@ LoadState::LoadState(Game* game)
 
 	// Audio
 	if (!loadBuffer.loadFromFile(START_WAV))
-		std::cout << "Failed to load audio file" << std::endl;
+		std::cout << "Failed to load " << START_WAV << " audio file" << std::endl;
 	loadSound.setBuffer(loadBuffer);
 	loadSound.play();
 

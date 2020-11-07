@@ -9,7 +9,8 @@ Game::Game()
 
     window.setFramerateLimit(MAX_FPS);
 
-    loopBuffer.loadFromFile(LOOP_AUDIO);
+    if (!loopBuffer.loadFromFile(LOOP_AUDIO))
+        std::cout << "Failed to load " << LOOP_AUDIO << " audio file" << std::endl;
     loopSound.setBuffer(loopBuffer);
     loopSound.setLoop(true);
     loopSound.setPlayingOffset(sf::seconds(13.f));

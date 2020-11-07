@@ -15,12 +15,14 @@ PlayState::PlayState(Game* game)
 {
 	resetState();
 	// For BG
-	playBg.loadFromFile(PLAY_BG_DIR);
+	if (!playBg.loadFromFile(PLAY_BG_DIR))
+		std::cout << "Failed to load " << PLAY_BG_DIR << " image file" << std::endl;
 	playBg.setSmooth(true);
 	sPlayBg.setTexture(playBg);
 	sPlayBg.setScale(2, 2);
 	// For Car
-	playCar.loadFromFile(CAR_DIR);
+	if (!playCar.loadFromFile(CAR_DIR))
+		std::cout << "Failed to load " << CAR_DIR << " image file" << std::endl;
 	playCar.setSmooth(true);
 	sPlayCar.setTexture(playCar);
 	sPlayCar.setOrigin(22, 22);
@@ -34,9 +36,12 @@ PlayState::PlayState(Game* game)
 	}
 
 	// Load Audio
-	accBuffer.loadFromFile(ACC_DIR);
+	if (!accBuffer.loadFromFile(ACC_DIR))
+		std::cout << "Failed to load " << ACC_DIR << " audio file" << std::endl;
 	accSound.setBuffer(accBuffer);
-	turnBuffer.loadFromFile(TURN_DIR);
+	accSound.setLoop(true);
+	if (!turnBuffer.loadFromFile(TURN_DIR))
+		std::cout << "Failed to load " << TURN_DIR << " audio file" << std::endl;
 	turnSound.setBuffer(turnBuffer);
 
 	this->game = game;

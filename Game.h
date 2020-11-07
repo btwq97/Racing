@@ -4,6 +4,7 @@
 #define GAME_HPP
 
 #include <vector>
+#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "GameState.h"

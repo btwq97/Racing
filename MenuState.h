@@ -4,6 +4,7 @@
 #define GAME_STATE_START_HPP
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include <vector>
 

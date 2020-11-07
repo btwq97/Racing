@@ -5,10 +5,12 @@ const char* MENU_BG_DIR = "Images\\menu.jpeg";
 MenuState::MenuState(Game* game)
 {
 	// Load menu bg
-	menuTexture.loadFromFile(MENU_BG_DIR);
+	if(!menuTexture.loadFromFile(MENU_BG_DIR))
+        std::cout << "Failed to load " << MENU_BG_DIR << " image file" << std::endl;
 	menuSprite.setTexture(menuTexture);
 	// Load font
-	font.loadFromFile(FONT_DIR);
+	if (!font.loadFromFile(FONT_DIR))
+        std::cout << "Failed to load " << FONT_DIR << " ttf file" << std::endl;
 	menuFont.setFont(font);
 	titleFont.setFont(font);
 	// Settings for font
