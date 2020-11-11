@@ -20,7 +20,7 @@ Additional library directories: [SFML parent directory]\SFML-2.5.1\lib\Release;[
 Additional dependencies: opengl32.lib;openal32.lib;freetype.lib;winmm.lib;gdi32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;ws2_32.lib;sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;sfml-audio-s.lib;sfml-network-s.lib;
 ```
 5) Test with the following code. If build success, it'll produce a green circle.
-```
+
 
 Tested with Ubuntu 18.04
 1) Install
