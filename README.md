@@ -21,6 +21,17 @@ Additional dependencies: opengl32.lib;openal32.lib;freetype.lib;winmm.lib;gdi32.
 ```
 5) Test with the following code. If build success, it'll produce a green circle.
 ```
+
+Tested with Ubuntu 18.04
+1) Install
+```
+$ sudo apt install libsfml-dev -y
+```
+2) Run code
+```
+$ make
+$ cd bin && ./racing
+```
 ===== ===== ===== ===== ===== TEST CODE ===== ===== ===== ===== ====== 
 #include <SFML/Graphics.hpp>
 
