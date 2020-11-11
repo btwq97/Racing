@@ -59,4 +59,4 @@ int main()
     return 0;
 }
 ```
-6) Run code in Debug mode and see the Tetris game run.
+Note: Run test code to see if all the dependencies are met.
