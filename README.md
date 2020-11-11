@@ -33,6 +33,7 @@ $ make
 $ cd bin && ./racing
 ```
 ===== ===== ===== ===== ===== TEST CODE ===== ===== ===== ===== ====== 
+```
 #include <SFML/Graphics.hpp>
 
 int main()
