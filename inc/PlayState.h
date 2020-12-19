@@ -33,7 +33,7 @@ private:
 	/*
 		Direction flags
 	*/
-	bool Up = 0, Right = 0, Down = 0, Left = 0;
+	bool Up = false, Right = false, Down = false, Left = false;
 
 	std::vector<sf::Color> colour = { sf::Color::Red, sf::Color::Green, sf::Color::Magenta, sf::Color::Blue, sf::Color::White };
 

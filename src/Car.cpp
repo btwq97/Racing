@@ -26,7 +26,7 @@ void Car::findTarget()
         angle += 0.005 * speed;
     else
         angle -= 0.005 * speed;
-    if ((x - tx) * (x - tx) + (y - ty) * (y - ty) < 25 * 25) // displacement formula sqrt(x^2 + y^2)
+    if ((x - tx) * (x - tx) + (y - ty) * (y - ty) < 25 * 25) // Pythagoras theorem formula sqrt(x^2 + y^2)
         n = (n + 1) % num;
 }
 

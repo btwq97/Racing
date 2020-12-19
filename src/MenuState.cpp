@@ -1,8 +1,6 @@
 #include "MenuState.h"
 
-//const char* MENU_BG_DIR = "Images\\menu.jpeg";
-const char* MENU_BG_DIR = "../Images/menu.png";
-
+const char* MENU_BG_DIR = "Images/menu.png";
 
 MenuState::MenuState(Game* game)
 {

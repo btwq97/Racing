@@ -48,11 +48,15 @@ private:
     */
     std::vector<sf::Color> colour = { sf::Color::Red, sf::Color::Yellow, sf::Color::Green, sf::Color::Black };
 
-    const int COUNT = 4;
+    const int COUNT = 3;
     /*
         Reset variables to original state
     */
     void resetState();
+    /*
+        Flag to push to play state
+    */
+    bool is_ready = false;
 
 public:
     virtual void draw(const float dt);

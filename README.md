@@ -30,7 +30,7 @@ $ sudo apt install libsfml-dev -y
 2) Run code
 ```
 $ make
-$ cd bin && ./racing
+$ ./bin/racing
 ```
 ===== ===== ===== ===== ===== TEST CODE ===== ===== ===== ===== ====== 
 ```

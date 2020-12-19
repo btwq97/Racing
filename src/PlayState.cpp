@@ -1,13 +1,9 @@
 #include "PlayState.h"
 
-//const char* PLAY_BG_DIR = "Images\\background.png";
-//const char* CAR_DIR = "Images\\car.png";
-//const char* ACC_DIR = "Audio\\acceleration.wav";
-//const char* TURN_DIR = "Audio\\turn.wav";
-const char* PLAY_BG_DIR = "../Images/background.png";
-const char* CAR_DIR = "../Images/car.png";
-const char* ACC_DIR = "../Audio/acceleration.wav";
-const char* TURN_DIR = "../Audio/turn.wav";
+const char* PLAY_BG_DIR = "Images/background.png";
+const char* CAR_DIR = "Images/car.png";
+const char* ACC_DIR = "Audio/acceleration.wav";
+const char* TURN_DIR = "Audio/turn.wav";
 
 
 /*

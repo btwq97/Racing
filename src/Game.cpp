@@ -1,7 +1,6 @@
 #include "Game.h"
 
-//const char* LOOP_AUDIO = "Audio\\loop.wav";
-const char* LOOP_AUDIO = "../Audio/loop.wav";
+const char* LOOP_AUDIO = "Audio/loop.wav";
 
 // Stopped here
 Game::Game()
