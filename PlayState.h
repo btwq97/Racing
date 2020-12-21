@@ -20,6 +20,8 @@ private:
 	sf::Sprite sPlayBg, sPlayCar;
 	sf::SoundBuffer accBuffer, turnBuffer;
 	sf::Sound accSound, turnSound;
+	sf::Font pauseFont;
+	sf::Text pauseText;
 	
 	/*
 		Radius
@@ -56,6 +58,10 @@ public:
 		Stop all movement Audio
 	*/
 	void Stop();
+	/*
+		Pause all/Resume movement Audio
+	*/
+	void Pause();
 	/*
 		Restart game at countdown screen
 	*/

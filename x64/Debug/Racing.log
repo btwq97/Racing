@@ -1,22 +1,5 @@
-﻿  PlayState.cpp
-C:\Users\benja\source\repos\Racing\PlayState.h(31,51): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\benja\source\repos\Racing\PlayState.h(31,62): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\benja\source\repos\Racing\PlayState.h(31,79): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\benja\source\repos\Racing\PlayState.cpp(33,18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(34,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(35,20): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(139,26): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(140,26): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(141,26): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(142,26): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(143,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(144,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(153,41): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(154,41): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(155,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(155,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(161,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\benja\source\repos\Racing\PlayState.cpp(192,50): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\benja\source\repos\Racing\PlayState.cpp(192,61): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\benja\source\repos\Racing\PlayState.cpp(192,79): warning C4305: '=': truncation from 'double' to 'float'
+﻿  Loading.cpp
+C:\Users\benja\source\repos\Racing\PlayState.h(33,51): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\benja\source\repos\Racing\PlayState.h(33,62): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\benja\source\repos\Racing\PlayState.h(33,79): warning C4305: 'initializing': truncation from 'double' to 'float'
   Racing.vcxproj -> C:\Users\benja\source\repos\Racing\x64\Debug\Racing.exe

@@ -33,10 +33,10 @@ LoadState::LoadState(Game* game)
 	loadText.setFillColor(sf::Color::Black);
 	loadText.setStyle(sf::Text::Bold);
 
-	for (int i = 0;i < COUNT;++i)
+	for (int i = 0;i < COUNT+1;++i)
 	{
-		if (i < 3)
-			loadText.setString(std::to_string(COUNT - (i+1)));
+		if (i < COUNT)
+			loadText.setString(std::to_string(COUNT - i));
 		else
 		{
 			loadText.setPosition(loadText.getPosition().x - 35, loadText.getPosition().y);
@@ -58,11 +58,13 @@ LoadState::LoadState(Game* game)
 void LoadState::draw(const float dt)
 {
 	timer += dt;
+
+	game->window.clear(colour[colour_state]);
+	game->window.draw(countdown[colour_state]);
+
 	// Countdown for 1s
 	if (timer >= 1.0)
 	{
-		game->window.clear(colour[colour_state]);
-		game->window.draw(countdown[colour_state]);
 		switch (colour_state)
 		{
 		case 0:
@@ -74,36 +76,21 @@ void LoadState::draw(const float dt)
 		case 2:
 			colour_state = 3;
 			break;
-		case 3:
-			colour_state = 4;
-			break;
 		default:
-			game->window.draw(loadSprite);
+			game->window.draw(loadSprite); // prevent "blinking"
+			is_ready = true;
 			break;
 		}
 		timer = 0;
 	}
 	else
-	{
-		// Only for 3, 2, 1
-		if (colour_state < COUNT - 1)
-		{
-			game->window.clear(colour[colour_state]);
-			game->window.draw(countdown[colour_state]);
-		}
-		// For "GO"
-		else
-		{
-			game->window.clear(colour[colour_state]);
-			game->window.draw(countdown[colour_state]);
+		if (colour_state == COUNT)
 			game->window.draw(loadSprite);
-		}
-	}
 }
 
 void LoadState::update(const float dt)
 {
-	if (colour_state == COUNT)
+	if (is_ready)
 		playGame();
 }
 

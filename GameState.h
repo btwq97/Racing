@@ -5,14 +5,14 @@
 
 #include "Game.h"
 
-class Game;
+class Game; // Declaration
 
 class GameState
 {
+protected:
     /*
         Protected allows the game pointer to be accessed in every child class (just like public does), but we can't access it if the class is not a child (so Resource Manager can't access it for example)
     */
-protected:
     Game* game;
 public:
     /*

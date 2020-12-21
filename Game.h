@@ -10,11 +10,20 @@
 #include "GameState.h"
 #include "Globals.h"
 
-class GameState;
+class GameState; // Declaration
 
 class Game
 {
 public:
+    /*
+        Flag to check for pause game
+    */
+    bool Pause = false;
+    /*
+        RenderWindow object to create window
+    */
+    sf::RenderWindow window;
+
     /*
         Constructor to create window
     */
@@ -23,7 +32,6 @@ public:
         Destructor to delete all states
     */
     ~Game();
-
     /*
         Pushes new state pointer into vector states
         Argument:
@@ -34,20 +42,15 @@ public:
         Delete states from vector states
     */
     void popState();
-
     /*
         Retrieve current state from vector state
     */
     GameState* CurrentState();
-
     /*
         Main game loop
     */
     void gameLoop();
-    /*
-        RenderWindow object to create window
-    */
-    sf::RenderWindow window;
+
 private:
     /*
         An array to store GameState pointers
