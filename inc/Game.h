@@ -16,6 +16,15 @@ class Game
 {
 public:
     /*
+        RenderWindow object to create window
+    */
+    sf::RenderWindow window;
+    /*
+        Flag to check for pause game
+    */
+    bool Pause = false;
+
+    /*
         Constructor to create window
     */
     Game();
@@ -44,10 +53,6 @@ public:
         Main game loop
     */
     void gameLoop();
-    /*
-        RenderWindow object to create window
-    */
-    sf::RenderWindow window;
 private:
     /*
         An array to store GameState pointers

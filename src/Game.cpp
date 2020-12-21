@@ -57,8 +57,9 @@ void Game::gameLoop()
         if (CurrentState() == nullptr)
             continue;
 
-        //get user input for current game state
-        CurrentState()->handleInput();
+        if (!Pause)
+            //get user input for current game state
+            CurrentState()->handleInput();
 
         //update anything neccessary
         CurrentState()->update(dt);

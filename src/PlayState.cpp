@@ -10,7 +10,7 @@ const char* TURN_DIR = "Audio/turn.wav";
 	Car structure objects
 */
 const int N = 5;
-Car car[5];
+Car car[N];
 
 PlayState::PlayState(Game* game)
 {
@@ -20,7 +20,11 @@ PlayState::PlayState(Game* game)
 		std::cout << "Failed to load " << PLAY_BG_DIR << " image file" << std::endl;
 	playBg.setSmooth(true);
 	sPlayBg.setTexture(playBg);
+	// To demo setScale to targetSize
+	// sf::Vector2i targetSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+	// sPlayBg.setScale(targetSize.x/sPlayBg.getLocalBounds().width, targetSize.y/sPlayBg.getLocalBounds().height);
 	sPlayBg.setScale(2, 2);
+
 	// For Car
 	if (!playCar.loadFromFile(CAR_DIR))
 		std::cout << "Failed to load " << CAR_DIR << " image file" << std::endl;
@@ -45,6 +49,16 @@ PlayState::PlayState(Game* game)
 		std::cout << "Failed to load " << TURN_DIR << " audio file" << std::endl;
 	turnSound.setBuffer(turnBuffer);
 
+	// For Pause font and text
+	if (!pauseFont.loadFromFile(FONT_DIR))
+		std::cout << "Failed to load " << FONT_DIR << " ttf file" << std::endl;
+	pauseText.setFont(pauseFont);
+	pauseText.setPosition(175, 200);
+	pauseText.setCharacterSize(60);
+	pauseText.setFillColor(sf::Color::White);
+	pauseText.setStyle(sf::Text::Bold);
+	pauseText.setString("GAME PAUSED");
+
 	this->game = game;
 }
 
@@ -52,21 +66,46 @@ void PlayState::update(const float dt)
 {
 	sf::Event evnt;
 	Up = 0, Right = 0, Down = 0, Left = 0; // Reset direction flags
+	
+	// Needs to be constantly updated for close, restart and pause
 	while (game->window.pollEvent(evnt))
 	{
-		if ((evnt.type == sf::Event::Closed) || (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)))
+		switch (evnt.type)
+		{
+		case sf::Event::Closed:
 			game->window.close();
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
-			restartGame();
+			break;
+		case sf::Event::KeyPressed:
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+				game->window.close();
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+				restartGame();
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+			{
+				if (game->Pause)
+					game->Pause = false;
+				else if (!game->Pause)
+					game->Pause = true;
+				Pause();
+			}
+			break;
+		default:
+			break;
+		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-		Up = 1;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-		Right = 1;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-		Down = 1;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-		Left = 1;
+
+	// Updates only when game is not paused
+	if (!game->Pause)
+	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+			Up = 1;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+			Right = 1;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+			Down = 1;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+			Left = 1;
+	}
 }
 
 void PlayState::handleInput()
@@ -163,6 +202,9 @@ void PlayState::draw(const float dt)
 		sPlayCar.setColor(colour[i]);
 		game->window.draw(sPlayCar);
 	}
+
+	if (game->Pause)
+		game->window.draw(pauseText);
 }
 
 void PlayState::playAcc()
@@ -179,6 +221,20 @@ void PlayState::Stop()
 {
 	turnSound.stop();
 	accSound.stop();
+}
+
+void PlayState::Pause()
+{
+	if (game->Pause)
+	{
+		turnSound.pause();
+		accSound.pause();
+	}
+	else if (!game->Pause)
+	{
+		turnSound.play();
+		accSound.play();
+	}
 }
 
 void PlayState::restartGame()
