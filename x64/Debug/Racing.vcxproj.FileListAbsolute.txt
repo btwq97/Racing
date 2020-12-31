@@ -1,2 +1,0 @@
-C:\Users\benja\source\repos\Racing\x64\Debug\Racing.exe
-C:\Users\benja\source\repos\Racing\x64\Debug\Racing.pdb

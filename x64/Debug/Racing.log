@@ -1,5 +1,0 @@
-﻿  Loading.cpp
-C:\Users\benja\source\repos\Racing\PlayState.h(33,51): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\benja\source\repos\Racing\PlayState.h(33,62): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\benja\source\repos\Racing\PlayState.h(33,79): warning C4305: 'initializing': truncation from 'double' to 'float'
-  Racing.vcxproj -> C:\Users\benja\source\repos\Racing\x64\Debug\Racing.exe
