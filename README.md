@@ -1,7 +1,7 @@
 # Race Car
 Retro style race car game. This is a game in progress.
 ## About
-Runs in Windows VS Code.
+Runs in Ubuntu VS Code.
 ## DEPENDENCIES
 Tested with Ubuntu 18.04
 1. Install.
