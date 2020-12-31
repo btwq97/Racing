@@ -8,9 +8,9 @@ BINPATH = bin
 SRC = $(wildcard $(SRC_DIR)/*.cpp)
 OBJ = $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-CPPFLAGS += -I$(INC_DIR)
-CFLAGS += -std=c++11 #-Wall
-LDLIBS += -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+CPPFLAGS := -I$(INC_DIR)
+CFLAGS := -std=c++11 #-Wall
+LDLIBS := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 RM = rm -rf
 
 .PHONY: all clean
@@ -27,4 +27,3 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 
 clean:
 	$(RM) $(OBJ_DIR) $(BINPATH)
-
