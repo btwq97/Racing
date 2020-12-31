@@ -5,11 +5,11 @@ Retro style race car game. This is a game in progress.
 Runs in Windows VS Code.
 
 ## DEPENDENCIES
-1) Download [MinGW](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe/download "MinGW").
-2) Download [SFML](https://www.sfml-dev.org/download/sfml/2.5.1/ "SFML").
-    2.1) Download the "GCC 7.3.0 MinGW (DW2) - 32-bit" version.
-    2.2) Make sure MINGW is added into environment PATH. See [link](https://code.visualstudio.com/docs/cpp/config-mingw).
-3) Test with the following code. If successful, it'll produce a green circle.
+1. Download [MinGW](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe/download "MinGW").
+2. Download [SFML](https://www.sfml-dev.org/download/sfml/2.5.1/ "SFML").
+    1. Download the "GCC 7.3.0 MinGW (DW2) - 32-bit" version.
+    2. Make sure MINGW is added into environment PATH. See [link](https://code.visualstudio.com/docs/cpp/config-mingw).
+3. Test with the following code. If successful, it'll produce a green circle.
 ```
 #include <SFML/Graphics.hpp>
 
@@ -37,6 +37,6 @@ int main()
 }
 ```
 ## Running Race Car
-1) Open Terminal in VSC.
-2) PS> mingw32-make all (or any other make you installed using MINGW)
-3) PS> .\bin\racing.exe
+1. Open Terminal in VSC.
+2. PS> mingw32-make all (or any other make you installed using MINGW)
+3. PS> .\bin\racing.exe
