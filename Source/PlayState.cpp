@@ -81,10 +81,7 @@ void PlayState::update(const float dt)
 				restartGame();
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 			{
-				if (game->Pause)
-					game->Pause = false;
-				else if (!game->Pause)
-					game->Pause = true;
+				game->Pause = !game->Pause;
 				Pause();
 			}
 			break;
