@@ -5,8 +5,9 @@
 
 #include <cmath>
 
-struct Car
+class Car
 {
+    public:
     /*
         Characteristics
     */
